@@ -5,15 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="RecipieFiles\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="15.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="RecipieFiles\Tacos.csv">
+    <None Update="RecipieFiles\porksandwiches.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\porktacos.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\tacos.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

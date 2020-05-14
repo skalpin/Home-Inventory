@@ -19,7 +19,7 @@ namespace Home.Invintory.Cli
             while(!missingService.IsComplete())
             {
                 var nextIngredient = missingService.NextItem();
-                Console.Write($"Do you have {nextIngredient.Quantity} {nextIngredient.Name} {nextIngredient.Unit}?");
+                Console.Write($"Do you have {nextIngredient.Quantity} {nextIngredient.Unit} {nextIngredient.Name}?");
                 Console.Write(" (y/n) ");
                 var response = Console.ReadKey();
                 Console.WriteLine();
