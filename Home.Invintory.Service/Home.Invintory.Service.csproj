@@ -18,6 +18,9 @@
     <None Update="RecipieFiles\chickennuggets.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="RecipieFiles\grilledcheeseandtomatosoup.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="RecipieFiles\pastaandmeatballs.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

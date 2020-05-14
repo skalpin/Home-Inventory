@@ -11,12 +11,23 @@ namespace Home.Invintory.Cli
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Let's build your grocery list");
-            Console.WriteLine("Please enter a comma separated list of meals you need to make sure you have everything for.");
-            var meals = Console.ReadLine().Split(',');
-
             var fileRecipieProvier = new FileRecipieProvider();
-            var missingService = new MissingItemsService(fileRecipieProvier.GetIngridentsFor(meals));
+            var missingService = new MissingItemsService(fileRecipieProvier.GetIngridentsFor(s =>
+            {
+                Console.WriteLine();
+                Console.Write($"{s}? ");
+                switch(Console.ReadKey().Key)
+                {
+                    case ConsoleKey.Y:
+                        return true;
+                    case ConsoleKey.N:
+                        return false;
+                    default:
+                        return false;
+                }
+            }));
+
+            Console.WriteLine();
 
             while(!missingService.IsComplete())
             {
