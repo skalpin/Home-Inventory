@@ -16,8 +16,15 @@ namespace Home.Invintory.Service.Services
             {
                 Asked = false,
                 Needed = false,
-                Ingrident = g.Aggregate((a, b) => new Ingrident { Name = a.Name, Quantity = a.Quantity + b.Quantity, Unit = a.Unit })
+                Ingrident = g.Aggregate((a, b) => new Ingrident
+                {
+                    Name = a.Name,
+                    Quantity = a.Quantity + b.Quantity,
+                    Unit = a.Unit,
+                    Department = a.Department
+                })
             })
+            .OrderBy(i => i.Ingrident.Department)
             .ToList();
         }
 

@@ -1,11 +1,11 @@
 Name,Quantity,Unit,Department
 Pork Shoulder,1.5,lb,Meat
-Shreded Carrots,1,,Produce
-Shreded Cabbage,1,,Produce
+Shreded Carrots,.5,,Produce
+Shreded Cabbage,.5,,Produce
 Cilantro,1,,Produce
-Onion,1,,Produce
+Onion,.5,,Produce
 Sour Cream,8,oz,Dairy
-Chili in Adobe,1,,Other
+Chili in Adobe,.1,,Other
 Corn Tortillas,8,,Other
 Lime,1,,Produce
 Refried Beans,32,oz,Other

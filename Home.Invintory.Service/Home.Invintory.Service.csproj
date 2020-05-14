@@ -9,6 +9,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="RecipieFiles\hamburgers.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\chilidogs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\chickennuggets.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\pastaandmeatballs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="RecipieFiles\porksandwiches.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
