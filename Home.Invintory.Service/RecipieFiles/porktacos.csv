@@ -1,12 +1,12 @@
-Name,Quantity,Unit
-Pork Shoulder,1.5,lb
-Shreded Carrots,1,
-Shreded Cabbage,1,
-Cilantro,1,
-Onion,1,
-Sour Cream,8,oz
-Chili in Adobe,1,
-Corn Tortillas,8,
-Lime,1,
-Refried Beans,32,oz
-Tostitos,1,
+Name,Quantity,Unit,Department
+Pork Shoulder,1.5,lb,Meat
+Shreded Carrots,1,,Produce
+Shreded Cabbage,1,,Produce
+Cilantro,1,,Produce
+Onion,1,,Produce
+Sour Cream,8,oz,Dairy
+Chili in Adobe,1,,Other
+Corn Tortillas,8,,Other
+Lime,1,,Produce
+Refried Beans,32,oz,Other
+Tostitos,1,,Other

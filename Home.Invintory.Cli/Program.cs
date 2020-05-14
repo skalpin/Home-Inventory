@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Home.Invintory.Service;
 using Home.Invintory.Service.Services;
 
@@ -35,7 +36,7 @@ namespace Home.Invintory.Cli
 
             Console.WriteLine("********************************************************************************");
             Console.WriteLine("You need to purchase:");
-            foreach (var item in missingService.GetList())
+            foreach (var item in missingService.GetList().OrderBy(i => i.Department))
             {
                 Console.WriteLine($"{item.Quantity} {item.Unit} {item.Name}");
             }
