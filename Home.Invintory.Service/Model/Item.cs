@@ -2,7 +2,7 @@
 {
     public class Item
     {
-        public Ingrident Ingredient { get; set; }
+        public Ingrident Ingrident { get; set; }
         public bool Asked { get; set; }
         public bool Needed { get; set; }
     }

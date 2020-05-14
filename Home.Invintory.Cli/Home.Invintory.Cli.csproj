@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Home.Invintory.Service\Home.Invintory.Service.csproj" />
+  </ItemGroup>
+
 </Project>

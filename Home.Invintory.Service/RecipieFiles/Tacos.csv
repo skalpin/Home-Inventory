@@ -1,8 +1,10 @@
-Name	Quantity	Unit
-Onion	1	
-Tomato	1	
-Taco Seasoning	2	tbsp
-Taco Shells	8	
-Tortillas	8	
-Shreded Cheddar Cheese	8	oz
-Refried Beans	32	oz
+Name,Quantity,Unit
+Ground Beef,1,lb
+Onion,1,
+Tomato,1,
+Taco Seasoning,2,tbsp
+Taco Shells,8,
+Tortillas,8,
+Shreded Cheddar Cheese,8,oz
+Refried Beans,32,oz
+Tostitos,1,

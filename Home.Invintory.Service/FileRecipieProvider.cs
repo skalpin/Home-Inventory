@@ -12,9 +12,11 @@ namespace Home.Invintory.Service
     {
         public IEnumerable<Ingrident> GetIngridentsFor(IEnumerable<string> recipieNames)
         {
-            foreach (var file in Directory.EnumerateFiles("RecipieFiles").Where(f => recipieNames.Contains(f)))
+            foreach (var file in Directory.EnumerateFiles("RecipieFiles")
+                .Select(f => new { RecipieName = Path.GetFileNameWithoutExtension(f), FileName = f })
+                .Where(f => recipieNames.Contains(f.RecipieName)))
             {
-                using (var reader = new StreamReader($"RecipieFiles\\{file}"))
+                using (var reader = new StreamReader(file.FileName))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     foreach (var ingrident in csv.GetRecords<Ingrident>())

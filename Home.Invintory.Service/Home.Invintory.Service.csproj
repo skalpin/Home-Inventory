@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
     <Folder Include="RecipieFiles\" />
   </ItemGroup>
 
@@ -15,7 +14,7 @@
 
   <ItemGroup>
     <None Update="RecipieFiles\Tacos.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

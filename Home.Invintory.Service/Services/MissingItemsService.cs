@@ -6,31 +6,32 @@ namespace Home.Invintory.Service.Services
 {
     public class MissingItemsService
     {
-        private readonly IEnumerable<Item> items;
+        private readonly List<Item> items;
 
         public MissingItemsService(IEnumerable<Ingrident> ingridents)
         {
-            ingridents
+            items = ingridents
             .GroupBy(i => i.Name)
             .Select(g => new Item
             {
                 Asked = false,
                 Needed = false,
-                Ingredient = g.Aggregate((a, b) => new Ingrident { Name = a.Name, Quantity = a.Quantity + b.Quantity, Unit = a.Unit })
-            });
+                Ingrident = g.Aggregate((a, b) => new Ingrident { Name = a.Name, Quantity = a.Quantity + b.Quantity, Unit = a.Unit })
+            })
+            .ToList();
         }
 
-        public bool IsComplete() => items.Any(i => !i.Asked);
+        public bool IsComplete() => !items.Any(i => !i.Asked);
 
-        public Item NextItem() => items.FirstOrDefault(i => !i.Asked);
+        public Ingrident NextItem() => items.FirstOrDefault(i => !i.Asked)?.Ingrident;
 
-        public void UpdateItem(Item item)
+        public void UpdateItem(string name, bool needed)
         {
-            var original = items.FirstOrDefault(i => i.Ingredient.Name == item.Ingredient.Name);
+            var original = items.FirstOrDefault(i => i.Ingrident.Name == name);
             original.Asked = true;
-            original.Needed = item.Needed;
+            original.Needed = needed;
         }
 
-        public IEnumerable<Item> GetList() => items.Where(i => i.Needed);
+        public IEnumerable<Ingrident> GetList() => items.Where(i => i.Needed).Select(i => i.Ingrident);
     }
 }
