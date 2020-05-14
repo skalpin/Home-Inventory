@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Home.Invintory.Service;
+using Home.Invintory.Service.Model;
 using Home.Invintory.Service.Services;
 
 namespace Home.Invintory.Cli
@@ -34,11 +35,14 @@ namespace Home.Invintory.Cli
                 }
             }
 
-            Console.WriteLine("********************************************************************************");
             Console.WriteLine("You need to purchase:");
-            foreach (var item in missingService.GetList().OrderBy(i => i.Department))
+            foreach (var group in missingService.GetList().GroupBy(i => i.Department).OrderBy(i => i.Key))
             {
-                Console.WriteLine($"{item.Quantity} {item.Unit} {item.Name}");
+                Console.WriteLine("********************************************************************************");
+                Console.WriteLine(Enum.GetName(typeof(Department), group.Key));
+                Console.WriteLine("********************************************************************************");
+                foreach(var item in group)
+                    Console.WriteLine($"  {item.Quantity} {item.Unit} {item.Name}");
             }
         }
     }
