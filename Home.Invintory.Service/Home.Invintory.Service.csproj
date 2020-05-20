@@ -9,6 +9,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="RecipieFiles\Chicken Nuggets.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Chicken Stir Fry.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Chili Dogs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Chili.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Grilled Cheese.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="RecipieFiles\hamburgers.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -21,13 +36,28 @@
     <None Update="RecipieFiles\grilledcheeseandtomatosoup.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="RecipieFiles\Pasta and Meatballs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="RecipieFiles\pastaandmeatballs.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Pork Sandwiches.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="RecipieFiles\porksandwiches.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="RecipieFiles\porktacos.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Quesadillas.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Tacos Beef.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="RecipieFiles\Tacos Pork.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="RecipieFiles\tacos.csv">

@@ -12,31 +12,20 @@ namespace Home.Invintory.Cli
         static void Main(string[] args)
         {
             var fileRecipieProvier = new FileRecipieProvider();
-            var missingService = new MissingItemsService(fileRecipieProvier.GetIngridentsFor(s =>
-            {
-                Console.WriteLine();
-                Console.Write($"{s}? ");
-                switch(Console.ReadKey().Key)
-                {
-                    case ConsoleKey.Y:
-                        return true;
-                    case ConsoleKey.N:
-                        return false;
-                    default:
-                        return false;
-                }
-            }));
+            var missingService = new MissingItemsService(
+                fileRecipieProvier.GetIngridentsFor(
+                    SelectRecipies(fileRecipieProvier.GetAllRecipies())));
 
             Console.WriteLine();
 
-            while(!missingService.IsComplete())
+            while (!missingService.IsComplete())
             {
                 var nextIngredient = missingService.NextItem();
                 Console.Write($"Do you have {nextIngredient.Quantity} {nextIngredient.Unit} {nextIngredient.Name}?");
                 Console.Write(" (y/n) ");
                 var response = Console.ReadKey();
                 Console.WriteLine();
-                if(response.Key == ConsoleKey.Y)
+                if (response.Key == ConsoleKey.Y)
                 {
                     missingService.UpdateItem(nextIngredient.Name, false);
                 }
@@ -52,8 +41,19 @@ namespace Home.Invintory.Cli
                 Console.WriteLine("********************************************************************************");
                 Console.WriteLine(Enum.GetName(typeof(Department), group.Key));
                 Console.WriteLine("********************************************************************************");
-                foreach(var item in group)
+                foreach (var item in group)
                     Console.WriteLine($"  {item.Quantity} {item.Unit} {item.Name}");
+            }
+        }
+
+        private static IEnumerable<string> SelectRecipies(IEnumerable<string> recipies)
+        {
+            foreach (var recipie in recipies)
+            {
+                Console.WriteLine();
+                Console.Write($"{recipie}? ");
+                if (Console.ReadKey().Key == ConsoleKey.Y)
+                    yield return recipie;
             }
         }
     }

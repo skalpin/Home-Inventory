@@ -25,7 +25,7 @@ namespace Home.Invintory.Service.Services
                 })
             })
             .OrderBy(i => i.Ingrident.Department)
-            .ToList();
+            .ToList(); // must make sure the list is only executed once.
         }
 
         public bool IsComplete() => !items.Any(i => !i.Asked);
