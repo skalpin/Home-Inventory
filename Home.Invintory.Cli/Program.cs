@@ -13,8 +13,8 @@ namespace Home.Invintory.Cli
         {
             var fileRecipieProvier = new FileRecipieProvider();
             var missingService = new MissingItemsService(
-                fileRecipieProvier.GetIngridentsFor(
-                    SelectRecipies(fileRecipieProvier.GetAllRecipies())));
+                fileRecipieProvier.GetIngridentsFor(SelectRecipies(fileRecipieProvier.GetAllRecipies()))
+                .Concat(GetStaples()));
 
             Console.WriteLine();
 
@@ -44,6 +44,15 @@ namespace Home.Invintory.Cli
                 foreach (var item in group)
                     Console.WriteLine($"  {item.Quantity} {item.Unit} {item.Name}");
             }
+        }
+
+        private static IEnumerable<Ingrident> GetStaples()
+        {
+            Console.WriteLine("How many days are you shopping for?");
+            var days = 0;
+            while (!int.TryParse(Console.ReadLine(), out days) && days < 0)
+                ;
+            return StaplesProvider.GetStablesFor(days);
         }
 
         private static IEnumerable<string> SelectRecipies(IEnumerable<string> recipies)
